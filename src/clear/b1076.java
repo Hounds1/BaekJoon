@@ -1,5 +1,7 @@
 package clear;
 
+import java.util.Scanner;
+
 public class b1076 {
 
     public static void main(String[] args) {
