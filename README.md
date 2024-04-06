@@ -1,4 +1,4 @@
-# BackJoon
+# BaekJoon
 
 BaekJoon 풀이 모음
 
