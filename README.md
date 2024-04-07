@@ -1,6 +1,6 @@
-# BackJoon
+# BaekJoon
 
-BackJoon 풀이 모음
+BaekJoon 풀이 모음
 
 정답 처리된 문제들은 [여기](https://github.com/Hounds1/BaekJoon/tree/main/src/clear)에 b{문제번호}로 작성되었습니다.
 
@@ -13,6 +13,10 @@ BackJoon 풀이 모음
 지속적으로 업데이트 하겠습니다.<br>
 감사합니다.<br>
 <br>
+
+# Inflearn
+
+인프런 알고리즘 강의 문제 풀이가 추가 되었습니다.
 
 ---
 ### 주의
