@@ -13,14 +13,14 @@ public class b1068 {
 
         int len = Integer.parseInt(bufferedReader.readLine());
 
-        Main.Node[] nodes = new Main.Node[len];
+        Node[] nodes = new Node[len];
         for (int i = 0; i < len; i++) {
-            nodes[i] = new Main.Node(i);
+            nodes[i] = new Node(i);
         }
 
         int[] entry = Arrays.stream(bufferedReader.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-        Main.Node rootNode = null;
+        Node rootNode = null;
         for (int i = 0; i < len; i++) {
             int element = entry[i];
 
@@ -36,18 +36,18 @@ public class b1068 {
         }
 
         for (int i = 0; i < len; i++) {
-            Main.Node node = nodes[i];
+            Node node = nodes[i];
             node.children.removeIf(c -> c.id == target);
         }
 
         System.out.println(dfs(rootNode));
     }
 
-    public static int dfs(Main.Node root) {
+    public static int dfs(Node root) {
         if (root.children.isEmpty()) return 1;
 
         int sum = 0;
-        for (Main.Node node : root.children) {
+        for (Node node : root.children) {
             sum += dfs(node);
         }
 
@@ -56,7 +56,7 @@ public class b1068 {
 
     public static class Node {
         public final int id;
-        public final List<Main.Node> children = new ArrayList<>();
+        public final List<Node> children = new ArrayList<>();
 
         public Node(int id) {
             this.id = id;
