@@ -14,8 +14,7 @@ public class Main {
         for (int i = 0; i < len; i++) {
             String line = bufferedReader.readLine();
             if (line.contains("push")) {
-                String[] split = line.split(" ");
-                queue.add(Integer.parseInt(split[1]));
+                queue.add(Integer.parseInt(line.replace("push ", "")));
                 continue;
             }
             
@@ -32,21 +31,21 @@ public class Main {
                 sb.append(queue.size()).append("\n");
                 continue;
             }
-            
+
             if (line.equals("empty")) {
                 sb.append(queue.isEmpty() ? 1 : 0).append("\n");
                 continue;
             }
-            
+
             if (line.equals("front")) {
                 if (queue.isEmpty()) {
                     sb.append(-1).append("\n");
                 } else {
-                    sb.append(queue.get(0)).append("\n");   
+                    sb.append(queue.get(0)).append("\n");
                 }
                 continue;
             }
-            
+
             if (line.equals("back")) {
                 if (queue.isEmpty()) {
                     sb.append(-1).append("\n");
