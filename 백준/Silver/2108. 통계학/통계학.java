@@ -33,18 +33,13 @@ public class Main {
             Map.Entry<Integer, Integer> entry = map.entrySet().iterator().next();
             System.out.println(entry.getKey());
         } else {
-            List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
-            list.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
-
             int max = 0;
-            for (Map.Entry<Integer, Integer> entry : list) {
-                int value = entry.getValue();
-
-                if (value > max) max = value;
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > max) max = entry.getValue();
             }
 
             List<Integer> targets = new ArrayList<>();
-            for (Map.Entry<Integer, Integer> entry : list) {
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
                 if (entry.getValue() == max) targets.add(entry.getKey());
             }
 
