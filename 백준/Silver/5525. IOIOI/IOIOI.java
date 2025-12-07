@@ -9,29 +9,24 @@ public class Main {
 
         int N = Integer.parseInt(bufferedReader.readLine());
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("IOI");
-        sb.append("OI".repeat(Math.max(0, N - 1)));
-
-        String target = sb.toString();
-        sb.setLength(0);
-
         int len = Integer.parseInt(bufferedReader.readLine());
         String line = bufferedReader.readLine();
 
+        final char I = 'I';
+        final char O = 'O';
+
         int cnt = 0;
-        int idx = 0;
-        while (idx <= len - target.length()) {
-            for (int i = idx; i < target.length() + idx; i++) {
-                sb.append(line.charAt(i));
-            }
+        int range = 0;
+        for (int i = 1; i < len - 1; i++) {
+            char c1 = line.charAt(i - 1);
+            char c2 = line.charAt(i);
+            char c3 = line.charAt(i + 1);
 
-            String str = sb.toString();
-
-            if (str.equals(target)) cnt++;
-
-            sb.setLength(0);
-            idx++;
+            if (c1 == I && c2 == O && c3 == I) {
+                range++;
+                if (range >= N) cnt++;
+                i++;
+            } else range = 0;
         }
 
         System.out.println(cnt);
